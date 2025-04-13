@@ -1,2 +1,2 @@
-# leadingwdge-consulting
+# leadingedge-consulting
 Leading Edge Consulting Site
