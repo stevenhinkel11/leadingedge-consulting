@@ -38,17 +38,30 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100px;
+    padding: 1rem;
+    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
 }
 
 .logo-container img {
-    height: 120px;
+    height: 50px;
     width: auto;
     filter: brightness(0) invert(1);
     transition: transform 0.3s ease;
@@ -65,34 +78,38 @@ nav {
     transform: scale(1.05);
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
-    margin-left: 2.5rem;
     font-size: 1.1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 0;
-    position: relative;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--highlight-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--highlight-color);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
 }
 
 main {
@@ -229,16 +246,83 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    .hamburger {
+        display: block;
     }
-    
-    .subhead {
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .logo-container img {
+        height: 40px;
+    }
+
+    .company-name {
         font-size: 1.2rem;
     }
-    
+
+    .hero h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .subhead {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
     .approach-tiles {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tile {
+        padding: 1.5rem;
+    }
+
+    .content-wrapper {
+        padding: 0 1rem;
+    }
+
+    .team-profile {
+        padding: 1rem 0;
+    }
+
+    .profile-image {
+        max-width: 200px;
     }
 }
 
@@ -273,19 +357,38 @@ footer {
     margin-right: auto;
 }
 
+.about-header {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .different {
     background-color: var(--secondary-color);
-    padding: 8rem 0;
+    padding: 4rem 0;
 }
 
 .point-of-view {
     background-color: var(--primary-color);
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 .team {
     background-color: var(--secondary-color);
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 .point-of-view p, .different p {
@@ -360,5 +463,13 @@ footer {
 
     .profile-image {
         max-width: 250px;
+    }
+
+    .about-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .different, .point-of-view, .team {
+        padding: 3rem 0;
     }
 } 
