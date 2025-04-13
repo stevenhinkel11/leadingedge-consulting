@@ -24,14 +24,50 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(tile);
     });
 
-    // Handle CTA button click
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', () => {
-            // Here you can add your contact form or redirect logic
-            alert('Thank you for your interest! Please contact us at info@leadingedge.com');
+    // Function to create and show modal
+    function showContactModal() {
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Thank you for your interest!</h2>
+                <p>Please contact us at <a href="mailto:steve@leadingedge-consulting.com">steve@leadingedge-consulting.com</a></p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        modal.style.display = 'flex';
+
+        // Close modal when clicking the close button
+        const closeModal = modal.querySelector('.close-modal');
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.removeChild(modal);
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.removeChild(modal);
+            }
         });
     }
+
+    // Handle CTA button clicks
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', showContactModal);
+    });
+
+    // Handle contact menu link clicks
+    const contactLinks = document.querySelectorAll('a[href="#contact"]');
+    contactLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            showContactModal();
+        });
+    });
 
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
