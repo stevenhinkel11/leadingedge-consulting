@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1950 400">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34495e" />
+      <stop offset="100%" stop-color="#2d3436" />
+    </linearGradient>
+    
+    <!-- Highlight pattern -->
+    <pattern id="highlight-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0 50 L100 50" stroke="#00cec9" stroke-width="0.5" stroke-opacity="0.15" />
+      <path d="M50 0 L50 100" stroke="#00cec9" stroke-width="0.5" stroke-opacity="0.15" />
+    </pattern>
+    
+    <!-- Overlay gradient -->
+    <linearGradient id="overlay-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34495e" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#34495e" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#34495e" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="1950" height="400" fill="url(#bg-gradient)" />
+  
+  <!-- Subtle grid pattern -->
+  <rect width="1950" height="400" fill="url(#highlight-pattern)" />
+  
+  <!-- Abstract shapes representing people/connectivity -->
+  <g opacity="0.6">
+    <!-- Circles representing people -->
+    <circle cx="600" cy="200" r="70" fill="#34495e" stroke="#00cec9" stroke-width="1.5" />
+    <circle cx="900" cy="200" r="90" fill="#34495e" stroke="#00cec9" stroke-width="1.5" />
+    <circle cx="1200" cy="200" r="60" fill="#34495e" stroke="#00cec9" stroke-width="1.5" />
+    <circle cx="1500" cy="200" r="80" fill="#34495e" stroke="#00cec9" stroke-width="1.5" />
+    
+    <!-- Connection lines -->
+    <path d="M670 200 L810 200" stroke="#ffffff" stroke-width="1" stroke-opacity="0.3" />
+    <path d="M990 200 L1140 200" stroke="#ffffff" stroke-width="1" stroke-opacity="0.3" />
+    <path d="M1260 200 L1420 200" stroke="#ffffff" stroke-width="1" stroke-opacity="0.3" />
+    
+    <!-- Secondary connections -->
+    <path d="M600 270 L900 290" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2" />
+    <path d="M900 110 L1200 140" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2" />
+    <path d="M1200 260 L1500 280" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2" />
+  </g>
+  
+  <!-- Subtle geometric elements -->
+  <g opacity="0.15">
+    <polygon points="200,50 300,150 100,150" fill="#ffffff" />
+    <polygon points="1700,250 1800,350 1600,350" fill="#ffffff" />
+    <rect x="350" y="300" width="200" height="50" fill="#ffffff" />
+    <rect x="1400" y="50" width="200" height="50" fill="#ffffff" />
+  </g>
+  
+  <!-- Accent lines -->
+  <line x1="0" y1="50" x2="1950" y2="50" stroke="#00cec9" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="0" y1="350" x2="1950" y2="350" stroke="#00cec9" stroke-width="1" stroke-opacity="0.3" />
+  
+  <!-- Gradient overlay for text placement -->
+  <rect x="0" y="100" width="1950" height="200" fill="url(#overlay-gradient)" />
+  
+  <!-- Optional dots pattern -->
+  <g fill="#ffffff" opacity="0.1">
+    <circle cx="100" cy="100" r="2" />
+    <circle cx="150" cy="100" r="2" />
+    <circle cx="200" cy="100" r="2" />
+    <circle cx="100" cy="150" r="2" />
+    <circle cx="150" cy="150" r="2" />
+    <circle cx="200" cy="150" r="2" />
+    <circle cx="100" cy="200" r="2" />
+    <circle cx="150" cy="200" r="2" />
+    <circle cx="200" cy="200" r="2" />
+    
+    <circle cx="1750" cy="200" r="2" />
+    <circle cx="1800" cy="200" r="2" />
+    <circle cx="1850" cy="200" r="2" />
+    <circle cx="1750" cy="250" r="2" />
+    <circle cx="1800" cy="250" r="2" />
+    <circle cx="1850" cy="250" r="2" />
+    <circle cx="1750" cy="300" r="2" />
+    <circle cx="1800" cy="300" r="2" />
+    <circle cx="1850" cy="300" r="2" />
+  </g>
+  
+  <!-- Subtle highlight -->
+  <path d="M0 200 Q 975 150, 1950 200" stroke="#00cec9" stroke-width="1" fill="none" stroke-opacity="0.4" />
+</svg>
