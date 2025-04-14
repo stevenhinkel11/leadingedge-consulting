@@ -489,19 +489,21 @@ footer a:hover {
     }
 }
 
+/* About Hero Section */
 .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/0ea3d2753f512788bf3b765b076cc10dff6bf781/assets/facilitation.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/2285cd504aa41738ceb8f351f4b0a1f5b6006724/assets/Collaborative%20Problem%20Solving.png');
     background-size: cover;
-    background-position: top 20% center;
+    background-position: top center;
     padding: 8rem 0;
     text-align: center;
     color: var(--text-color);
 }
 
+/* Approach Hero Section */
 .approach-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/0ea3d2753f512788bf3b765b076cc10dff6bf781/assets/presentation.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/0ea3d2753f512788bf3b765b076cc10dff6bf781/assets/facilitation.jpg');
     background-size: cover;
-    background-position: top 15% center;
+    background-position: top 30% center;
     padding: 8rem 0;
     text-align: center;
     color: var(--text-color);
@@ -931,5 +933,61 @@ footer a:hover {
 
     .link-box a {
         padding: 2rem;
+    }
+}
+
+/* Approach Summary Section */
+.approach-summary {
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+.approach-summary p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .approach-summary {
+        padding: 3rem 0;
+    }
+    
+    .approach-summary p {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+    }
+
+    .approach-tiles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 2rem 1rem;
+    }
+
+    .approach-tiles .tile {
+        padding: 1.5rem;
+    }
+
+    .approach-tiles .tile i {
+        font-size: 2rem;
+    }
+
+    .approach-tiles .tile h3 {
+        font-size: 1.2rem;
+    }
+
+    .approach-tiles .tile p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .approach-tiles {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 } 
