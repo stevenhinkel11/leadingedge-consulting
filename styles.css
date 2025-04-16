@@ -125,29 +125,47 @@ section {
 }
 
 .hero {
-    background: linear-gradient(var(--gradient-start), var(--gradient-end)),
-                url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/551c8a824f287989dbb699a4ce765e019dbaafc6/assets/collaboration.jpg');
+    position: relative;
+    height: 100vh;
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    min-height: 80vh;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    text-align: center;
+    color: white;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 0;
     color: var(--text-color);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    text-align: center;
+    width: fit-content;
 }
 
 .hero .subhead {
     font-size: 1.5rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 4.9rem auto 0;
     color: var(--text-color);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
@@ -396,8 +414,117 @@ footer a:hover {
 }
 
 .different {
-    background-color: var(--secondary-color);
-    padding: 4rem 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.different::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+}
+
+.different .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.different h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.different h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transform: scaleX(0.5);
+    transition: transform 0.3s ease;
+}
+
+.different:hover h2::after {
+    transform: scaleX(1);
+}
+
+.different p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.different ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.different li {
+    position: relative;
+    padding: 1.2rem 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.different li:hover {
+    color: var(--accent-color);
+}
+
+.different li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-size: 2rem;
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .different {
+        padding: 4rem 0;
+    }
+    
+    .different h2 {
+        font-size: 2rem;
+    }
+    
+    .different li {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+    }
+    
+    .different li::before {
+        left: 0;
+        font-size: 1.5rem;
+    }
 }
 
 .point-of-view {
