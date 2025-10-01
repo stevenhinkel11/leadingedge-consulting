@@ -126,7 +126,7 @@ section {
 
 .hero, .about-hero, .approach-hero {
     position: relative;
-    height: 60vh;
+    height: 45vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -339,7 +339,7 @@ footer a:hover {
     }
 
     .hero, .about-hero, .approach-hero {
-        height: 50vh;
+        height: 35vh;
     }
     
     .hero h1, .about-hero h1, .approach-hero h1 {
@@ -1153,7 +1153,7 @@ footer a:hover {
 /* Contact Page Styles */
 .contact-hero {
     position: relative;
-    height: 60vh;
+    height: 45vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/stevenhinkel11/leadingedge-consulting/181b07b52949f93a2da135966a762daa40e5f70f/assets/handshake.jpg');
     background-size: cover;
     background-position: center 37%;
@@ -1167,11 +1167,15 @@ footer a:hover {
 }
 
 .contact-hero .hero-content {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     max-width: 800px;
-    padding: 0 2rem;
     text-align: center;
+    color: white;
+    z-index: 2;
 }
 
 .contact-hero h1 {
@@ -1311,7 +1315,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .contact-hero {
-        height: 50vh;
+        height: 35vh;
     }
 
     .contact-hero h1 {
@@ -1334,5 +1338,129 @@ footer a:hover {
 
     .contact-info h2, .contact-form h2 {
         font-size: 1.8rem;
+    }
+}
+
+/* Form Message Styles */
+.form-message {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.success-message {
+    background-color: rgba(0, 206, 201, 0.1);
+    border: 1px solid var(--highlight-color);
+    color: var(--highlight-color);
+}
+
+/* Privacy Policy Page Styles */
+.privacy-content {
+    background-color: var(--secondary-color);
+    padding: 6rem 0;
+    margin-top: 140px;
+}
+
+.privacy-content .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.privacy-content h1 {
+    color: var(--text-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.privacy-intro {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    text-align: center;
+    font-style: italic;
+}
+
+.privacy-content .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.privacy-content h2 {
+    color: var(--highlight-color);
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem 0;
+    text-align: left;
+}
+
+.privacy-content h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    text-align: left;
+}
+
+.privacy-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.privacy-content ul {
+    margin: 1rem 0 1.5rem 2rem;
+}
+
+.privacy-content li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.privacy-content a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.privacy-content a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 4rem 0;
+    }
+
+    .privacy-content .content-wrapper {
+        padding: 0 1rem;
+    }
+
+    .privacy-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .privacy-intro {
+        font-size: 1.1rem;
+    }
+
+    .privacy-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .privacy-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .privacy-content p,
+    .privacy-content li {
+        font-size: 1rem;
     }
 } 
